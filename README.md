@@ -1,62 +1,52 @@
-# Ex02 Django ORM Web Application
-## Date: 22.04.25
-
-## AIM
-To develop a Django application to store and retrieve data from a Movies Database using Object Relational Mapping(ORM).
-
-## ENTITY RELATIONSHIP DIAGRAM
-
-![image](https://github.com/user-attachments/assets/f8b45b00-cfd6-486f-975c-2b7040e120a2)
-
+6# Ex02 Django ORM Web Application
+# Date:01.04.2025
+# AIM
+To develop a Django application to store and retrieve data from a bank loan database using Object Relational Mapping(ORM).
 
 ## DESIGN STEPS
-
-### STEP 1:
+## STEP 1:
 Clone the problem from GitHub
 
-### STEP 2:
+## STEP 2:
 Create a new app in Django project
 
-### STEP 3:
+## STEP 3:
 Enter the code for admin.py and models.py
 
-### STEP 4:
+## STEP 4:
 Execute Django admin and create details for 10 books
 
-## PROGRAM
-```
+# PROGRAM
+'''
+
 admin.py
 
 from django.contrib import admin
-from.models import Loan,LoanAdmin
-admin.site.register(Loan,LoanAdmin)
+
+
+from .models import Employee,EmployeeAdmin
+
+admin.site.register(Employee,EmployeeAdmin)
 
 models.py
 
-from django.db import models
+from django.db import models 
 
-# Create your models here.
-from django.contrib import admin
-class Loan(models.Model):
-   loan_id=models.IntegerField(primary_key=True)
-   loan_type=models.CharField(max_length=30)
-   loan_amount=models.FloatField()
-   cust_acntno=models.IntegerField()
-   cust_name=models.CharField(max_length=50)
+from django.contrib import admin 
 
-class LoanAdmin(admin.ModelAdmin):
-    list_display=('loan_id','loan_type','loan_amount','cust_acntno','cust_name')
-```
+class Employee (models.Model):
 
+    eid=models.CharField(max_length=20,help_text="Employee ID") 
+    name=models.CharField(max_length=100) 
+    salary=models.IntegerField() 
+    age=models.IntegerField() 
+    email=models.EmailField() 
+class EmployeeAdmin(admin.ModelAdmin):
 
-
-## OUTPUT
-
-![image](https://github.com/user-attachments/assets/26581b31-daf6-4529-8e36-6e6419387fb3)
-![image](https://github.com/user-attachments/assets/0ef56c65-c1bf-421a-8944-6216e0fbfc3d)
-
-
-
-
-## RESULT
-Thus the program for creating movies database using ORM hass been executed successfully
+    list_display=('eid','name','salary','age','email') 
+    
+'''
+# OUTPUT
+![alt text](<Screenshot 2025-04-01 101615.png>)
+# RESULT
+Thus the program for creating a database using ORM hass been executed successfully
